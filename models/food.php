@@ -1,20 +1,32 @@
 <?php
+// vado ad includere il file products
 
-class NameClass {
-  public $name;
+  require_once __DIR__ . "/product.php";
+  // stabilisco che food sara' un "estensione" di products  
+
+  class Food extends Product{
+    public $tipology;
+    public $weight_in_kg;
   
 
   public function __construct(
-
     String $_name,
+    String $_image,
+    Int $_price,
+    String $_category,
+    String $_packaging_material,
+    String $_tipology,
+    Int $_weight_in_kg,
 
     )
     {
-      $this->name = $_name;
-     
+      parent::__construct($_name,$_image,$_price,$_category,$_packaging_material);
+     $this->tipology = $_tipology;
+     $this->weight_in_kg = $_weight_in_kg;
     }
   }
-  $pappax = new Product("lettiera next al borotalco","https://arcaplanet.vtexassets.com/arquivos/ids/249008/next-gatto-lettiera-extra-clumping-borotalco.jpg?v=1765984951",10.99,"Cats","Paper");
+  $pappa_x = new Food("strepitous","http...",2.40,"gatti","bustina di plastica","umido",0.07);
     
-  var_dump($pappax);
-    
+  var_dump($pappa_x);
+   
+  ?>
